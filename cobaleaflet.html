@@ -4,18 +4,19 @@
 	<title>Leaflet Web Map</title>
 	<link rel="stylesheet" href="leaflet.css" /> 
     <script src="leaflet.js"></script> 
+	<marker src="marker-icon.png"></marker>
 	<style>
-		#map { width: 960px; height: 500px; } 
+		#map { width: 1000px; height: 500px; } 
 	</style>
 </head>
 <body>
 	<div id="map"></div> 
 	<script>
 		//Mengatur pusat peta dan perbesaran peta
-		var map = L.map('map',{ center: [-6.212006847344385, 106.94331281666948], minzoom: 10, maxzoom:15 }); 
+		var map = L.map('map',{ center: [-6.212006847344385, 106.94331281666948], 12 }); 
 		//Memasukan tile OSM sebagai basemap
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
-		{ attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' }).addTo(map); 
+		{ attribution: 'map data&copy, minzoom: 10, maxzoom:15; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' }).addTo(map); 
 		var marker = L.marker([-6.212006847344385, 106.94331281666948]).bindPopup("<b>Kota Jakarta Timur</b><br>Khansa Puspitasari").addTo(map); 
 	</script>
 </body>
