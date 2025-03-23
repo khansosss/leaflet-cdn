@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html>
 <head>
-	<title>Leaflet Web Map</title>
-	<h1>Praktikum SIG Web Minggu ke-6</h1> 
-        <p>Laman LeafetJS Sederhana</p> 
-	<link rel="stylesheet" href="leaflet.css" /> 
-    <script src="leaflet.js"></script> 
-	<img src="marker-icon.png"></img>
-	<style>
-		#map { width: 960px; height: 500px; } 
-	</style>
+    <title>Leaflet Web Map</title>
+    <link rel="stylesheet" href="leaflet.css" /> 
+    <script src="leaflet.js"></script>
+    <style>
+        #map { width: 100%; height: 450px; }
+    </style>
 </head>
 <body>
-	<div id="map"></div> 
-	<script>
-		//Mengatur pusat peta dan perbesaran peta
-		var map = L.map('map',{ center: [-6.212006847344385, 106.94331281666948], minzoom:10, maxzoom: 15 }); 
-		//Memasukan tile OSM sebagai basemap
-		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
-		{ attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' }).addTo(map); 
-		var marker = L.marker([-6.212006847344385, 106.94331281666948]).bindPopup("<b>Kota Jakarta Timur</b><br>Khansa Puspitasari").addTo(map); 
-	</script>
+    <h1>Praktikum SIG Web Minggu ke-6</h1>
+    <p>Laman Leaflet Khansa Puspitasari</p>
+
+    <div id="map"></div>
+
+    <script>
+        // Mengatur pusat peta dan perbesaran peta
+        var map = L.map('map', { center: [-6.212006847344385, 106.94331281666948], minzoom: 10, maxzoom: 15 });
+
+        // Memasukan tile OSM sebagai basemap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+        {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+;
+        
+        //Menambahkan ikon marker
+        var customIcon = L.icon({
+            iconUrl: 'm"marker-icon.png"', 
+            iconSize: [32, 32],          
+            iconAnchor: [16, 32],         
+            popupAnchor: [0, -32]         
+        });
+        // Menambahkan marker pada peta
+        var marker = L.marker([-6.212006847344385, 106.94331281666948])
+            .bindPopup("<b>Kota Jakarta Timur</b><br>Khansa Puspitasari")
+            .addTo(map);
+    </script>
 </body>
 </html>
