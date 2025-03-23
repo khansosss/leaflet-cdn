@@ -12,7 +12,7 @@
 	<div id="map"></div> 
 	<script>
 		//Mengatur pusat peta dan perbesaran peta
-		var map = L.map('map',{ center: [-6.212006847344385, 106.94331281666948], zoom: 15 }); 
+		var map = L.map('map',{ center: [-6.212006847344385, 106.94331281666948], minzoom: 10, maxzoom:15 }); 
 		//Memasukan tile OSM sebagai basemap
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
 		{ attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' }).addTo(map); 
