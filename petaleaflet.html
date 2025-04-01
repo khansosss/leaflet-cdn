@@ -85,18 +85,13 @@
                 case 'Sleman':  return {color: "red"};
                 case 'Bantul':  return {color: "blue"};
                 case 'Yogyakarta':  return {color: "green"};
-                case 'Kulon Progo':  return {color: "magenta"};
-            }
-        },
+                case 'Kulon Progo':  return {color: "magenta"};},
             onEachFeature: function (feature, layer) {
                 layer.bindPopup(
                     'Kecamatan adalah ' + 
                     '<strong>' +
                     feature.properties.KECAMATAN +
-                    '</strong>'
-                );
-            }
-        }).addTo(map);
+                    '</strong>');}}).addTo(map);
     </script>
 </body>
 </html>
