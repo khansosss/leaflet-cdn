@@ -1,38 +1,20 @@
 <!DOCTYPE html>
-<head>
-    <title>Leaflet Web Map</title>
-    <link rel="stylesheet" href="leaflet.css" /> 
-    <script src="leaflet.js"></script>
-    <style>
-        #map { width: 100%; height: 450px; }
-    </style>
-</head>
-<body>
-    <h1>Praktikum SIG Web Minggu ke-6</h1>
-    <p>Laman Leaflet Khansa Puspitasari</p>
-
-    <div id="map"></div>
-
-    <script>
-        // Mengatur pusat peta dan perbesaran peta
-        var map = L.map('map', { center: [-6.212006847344385, 106.94331281666948], minzoom: 10, maxzoom: 15 });
-
-        // Memasukan tile OSM sebagai basemap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
-        {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-;
-        
-        //Menambahkan ikon marker
-        var customIcon = L.icon({
-            iconUrl: 'm"marker-icon.png"', 
-            iconSize: [32, 32],          
-            iconAnchor: [16, 32],         
-            popupAnchor: [0, -32]         
-        });
-        // Menambahkan marker pada peta
-        var marker = L.marker([-6.212006847344385, 106.94331281666948])
-            .bindPopup("<b>Kota Jakarta Timur</b><br>Khansa Puspitasari")
-            .addTo(map);
-    </script>
-</body>
+<html>
+    <head>
+        <title>Leaflet Web Map</title>
+        <link rel="stylesheet" href="leaflet.css" integrity="sha512xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <style>
+            #map {width: 960px;height: 500px;}
+        </style>
+        </head>
+        <body>
+            <div id="map"></div>
+            <script>
+                var map = L.map('map', {center: [-7.79558, 110.36949],zoom: 12});
+                L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
+                {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+                var marker = L.marker([-7.7639847, 110.3704093]).bindPopup('Teknik Geodesi UGM').addTo(map);
+            </script>
+            <script src="leaflet.js" integrity="sha512XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+            </body>
 </html>
