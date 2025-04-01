@@ -18,32 +18,35 @@
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <a class="navbar-brand" href="#">Navbar</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data
-                    target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                        aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                            </button>
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
+                target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
                                 <a class="nav-link" href="#">Home <span class="sr-only">(current)
-                                </span></a>
-                            </li>
-                            </ul>
-                            <form class="form-inline my-2 my-lg-0">
-                            <button class="btn btn-outline-success my-2 my-sm-0">
-                            Lokasi saya
-                            </button>
-                            </form>
-                            </div>
-                            </nav>
-                            
-                <!-- Pengaturan dasar Map dan Memuat Basemap -->
+                    </span></a>
+                    </li>
+                    </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                         <button 
+                            class="btn btn-outline-success my-2 my-sm-0">
+                                Lokasi saya
+                         </button>
+                        </form>
+                    </div>
+                </nav>
+                        
                 var map = L.map('map', {center: [-7.79558, 110.36949],zoom: 15});
                 
                 var esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', 
                                        {attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'}).addTo(map);
                 var carto = L.tileLayer('https://cartodb-basemaps{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}{r}.png', 
-                                        {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',subdomains: 'abcd',maxZoom: 19});
+                                        {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+                                        subdomains: 'abcd', 
+                                        maxZoom: 19});
                 var baseMaps = {"Citra Satelit": esri,"Peta Carto": carto};
 
 
