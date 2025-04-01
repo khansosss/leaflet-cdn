@@ -62,17 +62,16 @@
         };
 
         // Marker
-        var gunkid = L.marker([-7.963934637404138, 110.6013216389514]).bindPopup('Kabupaten Gunung Kidul'),
-            sleman  = L.marker([-7.716464851606326, 110.35559705161742]).bindPopup('Kabupaten Sleman'),
-            kupro  = L.marker([-7.858054112938641, 110.15957710112406]).bindPopup('Kabupaten Kulon Progo'),
-            mbantul  = L.marker([-7.882632306763498, 110.33370365418929]).bindPopup('Kabupaten Bantul'),
-            jog = L.marker([-7.7999475333403, 110.39137075607422]).bindPopup('Kota Yogyakarta');
-        
+        var gunkid = L.marker([-7.773247, 110.354232]).bindPopup('Gunung Kidul'),
+            sleman  = L.marker([-7.768144, 110.404701]).bindPopup('Sleman'),
+            kupro  = L.marker([-7.813044, 110.372429]).bindPopup('Kupro'),
+            mbantul  = L.marker([-7.799439, 110.330200]).bindPopup('Bantul'),
+            yog = L.marker([-7.7999475333403, 110.39137075607422]).bindPopup('Yogyakarta');
 
-        var jogja = L.layerGroup([gunkid, kupro, mbantul, sleman, jog]);
+        var jogja = L.layerGroup([gunkid, kupro, mbantul, sleman, yog]);
 
         var overlayMaps = {
-            "jogja": jogja
+            "Jogja": jogja
         };
 
         // Control Layer
